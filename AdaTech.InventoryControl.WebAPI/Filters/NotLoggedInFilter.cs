@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace AdaTech.InventoryControl.WebAPI.Filters
 {
-    public class NotLoggedInFilter : IAuthorizationFilter
+    public class NotLoggedInFilter: IAuthorizationFilter
     {
         private IHttpContextAccessor? _HttpContextAccessor { get; set; }
 

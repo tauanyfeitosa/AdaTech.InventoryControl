@@ -6,10 +6,12 @@ namespace AdaTech.InventoryControl.WebAPI.Filters
 {
     public class AlreadyLoggedInFilter : IAuthorizationFilter
     {
-        private IHttpContextAccessor? _IHttpContextAccessor { get; set; }
+        private IHttpContextAccessor? _httpContextAccessor;
+
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-            if (_IHttpContextAccessor!.HttpContext!.Request.Cookies.ContainsKey("JWT")) 
+            var httpContext = _httpContextAccessor?.HttpContext;
+            if (httpContext != null && httpContext.Request.Cookies.ContainsKey("JWT"))
             {
                 context.Result = new ContentResult()
                 {
@@ -18,9 +20,10 @@ namespace AdaTech.InventoryControl.WebAPI.Filters
                 };
             }
         }
+
         public AlreadyLoggedInFilter(IHttpContextAccessor httpContextAccessor)
         {
-            _IHttpContextAccessor = httpContextAccessor;
+            _httpContextAccessor = httpContextAccessor;
         }
     }
 }
