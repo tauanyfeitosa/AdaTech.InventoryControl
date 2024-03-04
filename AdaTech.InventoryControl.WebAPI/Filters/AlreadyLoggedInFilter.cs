@@ -9,11 +9,11 @@ namespace AdaTech.InventoryControl.WebAPI.Filters
         private IHttpContextAccessor? _IHttpContextAccessor { get; set; }
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-            if (_IHttpContextAccessor!.HttpContext!.Request.Cookies.ContainsKey("jwt")) 
+            if (_IHttpContextAccessor!.HttpContext!.Request.Cookies.ContainsKey("JWT")) 
             {
                 context.Result = new ContentResult()
                 {
-                    Content = "Usuário já logado",
+                    Content = "Já existe um usuário logado.",
                     StatusCode = 401
                 };
             }
