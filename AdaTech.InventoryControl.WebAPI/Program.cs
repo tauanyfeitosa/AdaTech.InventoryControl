@@ -12,7 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<ITokenService, TokenService>();
+
 builder.Services.AddScoped<AlreadyLoggedInFilter>();
+builder.Services.AddScoped<NotLoggedInFilter>();
+
 builder.Services.AddAuthentication(
     config =>
     {
@@ -37,7 +40,7 @@ builder.Services.AddAuthentication(
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "apisocialmedia", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "inventoryControlAPI", Version = "v1" });
 
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
