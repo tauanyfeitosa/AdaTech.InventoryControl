@@ -1,4 +1,5 @@
 using AdaTech.InventoryControl.DateLibrary;
+using AdaTech.InventoryControl.WebAPI.Utils.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -22,6 +23,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<MiddlewareException>();
 
 app.UseAuthorization();
 
