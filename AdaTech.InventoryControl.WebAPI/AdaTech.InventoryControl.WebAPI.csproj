@@ -26,6 +26,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdaTech.InventoryControl.DateLibrary\AdaTech.InventoryControl.DateLibrary.csproj" />
+    <ProjectReference Include="..\AdaTech.InventoryControl.Entities\AdaTech.InventoryControl.Entities.csproj" />
+    <ProjectReference Include="..\AdaTech.InventoryControl.Service\AdaTech.InventoryControl.Service.csproj" />
   </ItemGroup>
 
 </Project>
