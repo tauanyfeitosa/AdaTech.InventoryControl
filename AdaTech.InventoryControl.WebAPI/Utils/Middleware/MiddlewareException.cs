@@ -34,6 +34,11 @@ namespace AdaTech.InventoryControl.WebAPI.Utils.Middleware
 
             var statusCode = exception switch
             {
+                ExpiredDateException _ => StatusCodes.Status400BadRequest,
+                InvalidInputQuantityException _ => StatusCodes.Status400BadRequest,
+                InvalidProductNameException _ => StatusCodes.Status400BadRequest,
+                LowStockException _ => StatusCodes.Status409Conflict,
+                NotFoundException _ => StatusCodes.Status404NotFound,
                 _ => StatusCodes.Status500InternalServerError
             };
 
