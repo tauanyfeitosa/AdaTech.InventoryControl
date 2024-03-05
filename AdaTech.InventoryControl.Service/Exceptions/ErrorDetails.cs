@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 [assembly: InternalsVisibleTo("AdaTech.InventoryControl.WebAPI")]
 namespace AdaTech.InventoryControl.Service.Exceptions
 {
-    internal class ErrorDetails
+    public class ErrorDetails
     {
+        public int StatusCode { get; set; }
+        public string Message { get; set; }
     }
 }
