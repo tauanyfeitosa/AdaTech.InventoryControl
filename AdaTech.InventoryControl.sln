@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaTech.InventoryControl.WebAPI", "AdaTech.InventoryControl.WebAPI\AdaTech.InventoryControl.WebAPI.csproj", "{F05EA31A-5533-4E4F-AFC4-CEA13F38D59A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A8D2FC72-B5CF-450A-9697-54C47DA8AB3B} = {A8D2FC72-B5CF-450A-9697-54C47DA8AB3B}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdaTech.InventoryControl.Presentation", "AdaTech.InventoryControl.Presentation", "{C0A6DC01-674F-496B-922E-BB4D1D3AF9C8}"
 EndProject
