@@ -2,6 +2,7 @@ using AdaTech.InventoryControl.DateLibrary;
 using AdaTech.InventoryControl.Service.Services;
 using AdaTech.InventoryControl.WebAPI.Filters;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using AdaTech.InventoryControl.WebAPI.Utils.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -86,6 +87,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<MiddlewareException>();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
